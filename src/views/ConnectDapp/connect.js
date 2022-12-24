@@ -37,7 +37,7 @@ const connect = () => {
     functionName: "balanceOf",
     args: [address]
   })
-  //  console.log(balanceOfCheck ? balanceOfCheck : "", "token balance")
+   console.log(balanceOfCheck ? balanceOfCheck : "", "token balance")
 
   //converting hex to normal number // note - .toLocalString("en")
   const hexToDecimal = (hex) => parseInt(hex, 16);
