@@ -33,6 +33,9 @@ const connect = () => {
 
   //converting hex to normal number // note - .toLocalString("en")
   const hexToDecimal = (hex) => parseInt(hex, 16);
+  const bal = balanceOfCheck
+  console.log(bal)
+  // console.log()
 
   const balance = (balanceOfCheck ? hexToDecimal(balanceOfCheck._hex)/1e18 : 0 );
   console.log(balance);
