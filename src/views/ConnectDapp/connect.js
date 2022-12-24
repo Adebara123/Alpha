@@ -22,7 +22,15 @@ const connect = () => {
   // Alfa Token mainnet address is the contract address here
    const contractAddress = "0x5609972dd1655455eabc7019b9df15f8d00640ba";
 
-  const { data: balanceOfCheck } = useContractRead({
+  // const { data: balanceOfCheck } = useContractRead({
+  //   mode: "recklesslyUnprepared",
+  //   address: contractAddress,
+  //   abi: contractABI,
+  //   functionName: "balanceOf",
+  //   args: [address]
+  // })
+
+  const balanceOfCheck  = useContractRead({
     mode: "recklesslyUnprepared",
     address: contractAddress,
     abi: contractABI,
