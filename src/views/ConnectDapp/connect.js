@@ -15,6 +15,7 @@ const connect = () => {
 
   //  const [openModal, setOpenModal] = useState(false);
    const { address, isConnected } = useAccount();
+
    const { open } = useWeb3Modal()
   
    let navigate = useNavigate();
@@ -22,13 +23,14 @@ const connect = () => {
   // Alfa Token mainnet address is the contract address here
    const contractAddress = "0x5609972dd1655455eabc7019b9df15f8d00640ba";
 
-  const { data: balanceOfCheck } = useContractRead({
-    mode: "recklesslyUnprepared",
+  const balanceOfCheck = useContractRead({
     address: contractAddress,
     abi: contractABI,
-    functionName: "balanceOf",
-    args: [address]
+    functionName: 'balanceOf',
+    args: ["0x5DE9d9C1dC9b407a9873E2F428c54b74c325b82b"]
   })
+
+  console.log(balanceOfCheck, "djsk");
 
   // const balanceOfCheck  = useContractRead({
   //   mode: "recklesslyUnprepared",
@@ -37,7 +39,7 @@ const connect = () => {
   //   functionName: "balanceOf",
   //   args: [address]
   // })
-   console.log(balanceOfCheck ? balanceOfCheck : "0", "token balance")
+  //  console.log(balanceOfCheck ? balanceOfCheck : "0", "token balance")
 
   //converting hex to normal number // note - .toLocalString("en")
   const hexToDecimal = (hex) => parseInt(hex, 16);
@@ -45,8 +47,8 @@ const connect = () => {
   // console.log(bal)
 
 
-  const balance = (balanceOfCheck ? hexToDecimal(balanceOfCheck._hex)/1e18 : 0 );
-  console.log(balance);
+  // const balance = (balanceOfCheck ? hexToDecimal(balanceOfCheck._hex)/1e18 : 0 );
+  // console.log(balance);
 
   //function to enter Dapp
   const enterDapp = () => {
