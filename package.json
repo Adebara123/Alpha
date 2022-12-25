@@ -5,6 +5,7 @@
   "dependencies": {
     "@coinbase/wallet-sdk": "^3.6.3",
     "@craco/craco": "^7.0.0-alpha.0",
+    "@rainbow-me/rainbowkit": "^0.8.1",
     "@web3modal/ethereum": "^2.0.0-beta.10",
     "@web3modal/react": "^2.0.0-beta.10",
     "dangerous-html": "0.1.11",
