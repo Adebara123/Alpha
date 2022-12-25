@@ -22,28 +22,28 @@ const connect = () => {
   // Alfa Token mainnet address is the contract address here
    const contractAddress = "0x5609972dd1655455eabc7019b9df15f8d00640ba";
 
-  // const { data: balanceOfCheck } = useContractRead({
-  //   mode: "recklesslyUnprepared",
-  //   address: contractAddress,
-  //   abi: contractABI,
-  //   functionName: "balanceOf",
-  //   args: [address]
-  // })
-
-  const balanceOfCheck  = useContractRead({
+  const { data: balanceOfCheck } = useContractRead({
     mode: "recklesslyUnprepared",
     address: contractAddress,
     abi: contractABI,
     functionName: "balanceOf",
     args: [address]
   })
-   console.log(balanceOfCheck ? balanceOfCheck : "", "token balance")
+
+  // const balanceOfCheck  = useContractRead({
+  //   mode: "recklesslyUnprepared",
+  //   address: contractAddress,
+  //   abi: contractABI,
+  //   functionName: "balanceOf",
+  //   args: [address]
+  // })
+   console.log(balanceOfCheck ? balanceOfCheck : "0", "token balance")
 
   //converting hex to normal number // note - .toLocalString("en")
   const hexToDecimal = (hex) => parseInt(hex, 16);
-  const bal = balanceOfCheck
-  console.log(bal)
-  // console.log()
+  // const bal = balanceOfCheck
+  // console.log(bal)
+
 
   const balance = (balanceOfCheck ? hexToDecimal(balanceOfCheck._hex)/1e18 : 0 );
   console.log(balance);
@@ -53,7 +53,7 @@ const connect = () => {
     if (balance >= 5000000) {
      navigate('/alpha-teleporthq')
     } else {
-     toast.warning('You need to be holding atleast 5,000,000 (1%) $ALFA tokens before you can continue! Proceed by getting $ALFA token', {
+     toast.warning('You need to be holding atleast 5,000,000 (0.5%) $ALFA tokens before you can continue! Proceed by getting $ALFA token', {
      position: toast.POSITION.TOP_CENTER,
      autoClose: 9000
     });
